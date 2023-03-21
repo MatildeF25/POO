@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import static java.util.Arrays.copyOf;
@@ -169,12 +170,16 @@ public class Encomenda {
         this.linhasEncomenda.add(linha);
     }
 
-    public void removeProduto(String codProd){
+    public void removeProduto(String codProd) {
         boolean res = false;
-        for(int i = 0; i< this.linhasEncomenda.size() && res != true;i++){
-            if (this.linhasEncomenda.get(i).getReferencia().equals(codProd)){
+        Iterator<LinhaEncomenda> it = this.linhasEncomenda.iterator();
+        LinhaEncomenda l;
+
+        while(it.hasNext() && res==false){
+            l = it.next();
+            if(l.getReferencia().equals(codProd)){
+                it.remove();
                 res = true;
-                this.linhasEncomenda.remove(linhasEncomenda.get(i));
             }
         }
     }

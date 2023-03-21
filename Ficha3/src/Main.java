@@ -27,6 +27,14 @@ public class Main {
         System.out.println("linha de encomenda com ref3 foi removida da encomenda");
         System.out.println(e.toString());
 
+        Lampada lampada1 = new Lampada();
+        Lampada lampada2 = new Lampada();
+        lampada1.lampON();
+        lampada2.lampECO();
+        double cons1 = lampada1.totalConsumo();
+        double cons2 = lampada1.totalConsumo();
+        System.out.println("A lampada 1 " + lampada1.toString() + "e consumiu até agora " + cons1);
+        System.out.println("A lampada 2 " + lampada2.toString() + "e consumiu até agora " + cons2);
 
     }
 
