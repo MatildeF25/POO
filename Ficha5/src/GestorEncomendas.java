@@ -94,6 +94,6 @@ public class GestorEncomendas {
         }
         return encomendaSet;
     }
-    
+
 
 }
